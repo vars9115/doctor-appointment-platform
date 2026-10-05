@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>HealthCare+</h1>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/doctors">Doctors</a>
+        <a href="/dashboard">Dashboard</a>
+    </nav>
+</header>
+
+<h2 class="page-title">Appointment Dashboard</h2>
+
+<div class="appointments">
+
+{% if appointments %}
+
+    {% for appointment in appointments %}
+
+    <div class="appointment-card">
+
+        <h3>{{ appointment.doctor }}</h3>
+
+        <p>
+            <strong>Specialization:</strong>
+            {{ appointment.specialization }}
+        </p>
+
+        <p>
+            <strong>Patient:</strong>
+            {{ appointment.patient_name }}
+        </p>
+
+        <p>
+            <strong>Phone:</strong>
+            {{ appointment.phone }}
+        </p>
+
+        <p>
+            <strong>Date:</strong>
+            {{ appointment.date }}
+        </p>
+
+        <p>
+            <strong>Time:</strong>
+            {{ appointment.time }}
+        </p>
+
+        <p>
+            <strong>Reason:</strong>
+            {{ appointment.reason }}
+        </p>
+
+        <span class="status">Confirmed</span>
+
+    </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <div class="empty">
+        <h3>No appointments yet</h3>
+        <p>Book an appointment with a doctor to see it here.</p>
+        <a class="btn" href="/doctors">Find Doctors</a>
+    </div>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>

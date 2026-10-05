@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>HealthCare+</h1>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/doctors">Doctors</a>
+        <a href="/dashboard">Dashboard</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h2>Book Your Doctor Appointment</h2>
+        <p>Find trusted doctors and schedule your appointment easily.</p>
+        <a class="btn" href="/doctors">Find Doctors</a>
+    </div>
+</section>
+
+<section class="features">
+
+    <div class="card">
+        <h3>👨‍⚕️ Find Doctors</h3>
+        <p>Search doctors based on their specialization.</p>
+    </div>
+
+    <div class="card">
+        <h3>📅 Easy Booking</h3>
+        <p>Book an appointment by selecting your preferred date and time.</p>
+    </div>
+
+    <div class="card">
+        <h3>📋 Manage Appointments</h3>
+        <p>View your upcoming appointments from your dashboard.</p>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 HealthCare+ | Doctor Appointment Platform</p>
+</footer>
+
+</body>
+</html>

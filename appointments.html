@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>HealthCare+</h1>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/doctors">Doctors</a>
+        <a href="/dashboard">Dashboard</a>
+    </nav>
+</header>
+
+<div class="form-container">
+
+    <h2>Book Appointment</h2>
+
+    <div class="selected-doctor">
+        <h3>{{ doctor.name }}</h3>
+        <p>{{ doctor.specialization }}</p>
+        <p>{{ doctor.experience }} Experience</p>
+    </div>
+
+    <form method="POST">
+
+        <label>Patient Name</label>
+        <input type="text" name="patient_name" required>
+
+        <label>Phone Number</label>
+        <input type="tel" name="phone" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Appointment Date</label>
+        <input type="date" name="date" required>
+
+        <label>Appointment Time</label>
+        <input type="time" name="time" required>
+
+        <label>Reason for Visit</label>
+        <textarea name="reason" rows="4" required></textarea>
+
+        <button type="submit">Confirm Appointment</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
